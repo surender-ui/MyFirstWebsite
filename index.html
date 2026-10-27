@@ -1,105 +1,259 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Company ka Naam] | IT AMC & ERP Solutions</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; background: #f0f4f8; color: #222; }
-    header { background: #1e4fb3; color: white; text-align: center; padding: 40px 20px; }
-    header img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid white; background: white; }
-    header h1 { margin: 15px 0 5px; }
-    header p { margin: 0; font-size: 18px; }
-    section { max-width: 900px; margin: 30px auto; padding: 0 20px; }
-    h2 { color: #1e4fb3; border-bottom: 2px solid #1e4fb3; padding-bottom: 5px; }
-    p { line-height: 1.7; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .card h3 { margin-top: 0; color: #1e4fb3; }
-    .card ul { padding-left: 20px; margin: 0; line-height: 1.8; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
-    .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-    .btn { display: inline-block; background: #1e4fb3; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin: 10px 10px 0 0; }
-    footer { background: #222; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Company ka Naam] | IT AMC & ERP Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2540;--navy2:#16365c;--blue:#1f6feb;--teal:#12a594;--ink:#1b2a3a;--mute:#5b6b7c;--line:#dde5ee;--bg:#f5f8fc;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Plus Jakarta Sans',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+nav{background:var(--navy);position:sticky;top:0;z-index:5}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{color:#fff;font-weight:800;font-size:18px;text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{color:#c9d6e6;text-decoration:none;font-size:14px;font-weight:500}
+nav ul a:hover{color:#fff}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:44px;line-height:1.15;margin:0 0 16px;font-weight:800;letter-spacing:-.5px}
+.hero p{color:#c9d6e6;font-size:18px;max-width:520px;margin:0 0 28px}
+.btn{display:inline-block;padding:13px 26px;border-radius:8px;font-weight:700;text-decoration:none;font-size:15px;margin:0 10px 10px 0}
+.btn.p{background:var(--teal);color:#fff}
+.btn.s{border:1.5px solid #5d7ba0;color:#fff}
+.btn:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:2px}
+.hero svg{width:100%;height:auto}
+.stats{background:var(--white);border-bottom:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding-top:22px;padding-bottom:22px;gap:10px}
+.stats b{display:block;font-size:22px;color:var(--navy)}
+.stats span{font-size:13px;color:var(--mute)}
+section{padding:64px 0}
+section.alt{background:var(--white)}
+h2{font-size:30px;margin:0 0 10px;color:var(--navy);letter-spacing:-.3px}
+.lead{color:var(--mute);max-width:620px;margin:0 0 34px}
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:start}
+.about p{margin:0 0 14px;max-width:62ch}
+.facts{border-left:4px solid var(--teal);padding:4px 0 4px 22px}
+.facts div{margin-bottom:18px}
+.facts b{display:block;color:var(--navy);font-size:17px}
+.facts span{color:var(--mute);font-size:14px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{border-top:4px solid var(--blue);background:var(--white);padding:24px;border-radius:4px 4px 12px 12px;box-shadow:0 1px 3px rgba(13,37,64,.12)}
+.svc:nth-child(2){border-color:var(--teal)}
+.svc:nth-child(3){border-color:var(--navy2)}
+.svc h3{margin:0 0 10px;color:var(--navy);font-size:19px}
+.svc ul{margin:0;padding-left:18px;color:var(--mute);font-size:15px}
+.svc li{margin-bottom:5px}
+.hw{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hw figure{margin:0;background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.hw .art{background:linear-gradient(160deg,#eaf1fb,#dbe7f6);padding:18px;display:flex;justify-content:center}
+.hw svg{width:100%;max-width:230px;height:150px}
+.hw figcaption{padding:14px 18px}
+.hw figcaption b{display:block;color:var(--navy)}
+.hw figcaption span{font-size:14px;color:var(--mute)}
+.why{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 40px}
+.why div{padding-left:18px;border-left:3px solid var(--teal)}
+.why b{color:var(--navy);display:block}
+.why span{color:var(--mute);font-size:15px}
+.contact{background:var(--navy);color:#fff}
+.contact h2{color:#fff}
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact p{margin:0 0 10px;color:#c9d6e6}
+.contact b{color:#fff}
+footer{background:#08182b;color:#8fa3bb;text-align:center;padding:20px;font-size:14px}
+@media(max-width:800px){
+.hero .wrap,.about,.contact .grid{grid-template-columns:1fr}
+.hero h1{font-size:34px}
+.services,.hw{grid-template-columns:1fr}
+.why{grid-template-columns:1fr}
+.stats .wrap{grid-template-columns:repeat(2,1fr)}
+nav ul{display:none}
+}
+</style>
 </head>
 <body>
 
-  <header>
-    <img src="logo.jpg" alt="Company Logo" onerror="this.style.display='none'">
-    <h1>[Company ka Naam]</h1>
-    <p>IT AMC, ERP Implementation & Support Solutions</p>
-  </header>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<linearGradient id="scr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f6feb"/><stop offset="1" stop-color="#12a594"/></linearGradient>
+<symbol id="desktop" viewBox="0 0 240 160">
+<rect x="50" y="14" width="140" height="95" rx="8" fill="#0d2540"/>
+<rect x="58" y="22" width="124" height="79" rx="3" fill="url(#scr)"/>
+<rect x="68" y="32" width="50" height="6" rx="3" fill="#fff" opacity=".8"/>
+<rect x="68" y="46" width="80" height="4" rx="2" fill="#fff" opacity=".5"/>
+<rect x="68" y="56" width="64" height="4" rx="2" fill="#fff" opacity=".5"/>
+<rect x="108" y="109" width="24" height="18" fill="#5b6b7c"/>
+<rect x="88" y="127" width="64" height="7" rx="3" fill="#0d2540"/>
+<rect x="20" y="138" width="130" height="14" rx="5" fill="#fff" stroke="#9fb3c9"/>
+<rect x="160" y="138" width="22" height="14" rx="7" fill="#fff" stroke="#9fb3c9"/>
+</symbol>
+<symbol id="laptop" viewBox="0 0 240 160">
+<rect x="52" y="22" width="136" height="90" rx="7" fill="#0d2540"/>
+<rect x="59" y="29" width="122" height="76" rx="3" fill="url(#scr)"/>
+<rect x="70" y="40" width="46" height="6" rx="3" fill="#fff" opacity=".8"/>
+<rect x="70" y="54" width="86" height="4" rx="2" fill="#fff" opacity=".5"/>
+<rect x="70" y="64" width="60" height="4" rx="2" fill="#fff" opacity=".5"/>
+<path d="M30 118h180l-10 18a6 6 0 0 1-5 3H45a6 6 0 0 1-5-3z" fill="#9fb3c9"/>
+<rect x="100" y="121" width="40" height="5" rx="2.5" fill="#6f87a3"/>
+</symbol>
+<symbol id="printer" viewBox="0 0 240 160">
+<rect x="78" y="14" width="84" height="46" rx="3" fill="#fff" stroke="#9fb3c9"/>
+<rect x="88" y="26" width="50" height="4" rx="2" fill="#c3d1e1"/>
+<rect x="88" y="36" width="64" height="4" rx="2" fill="#c3d1e1"/>
+<rect x="36" y="56" width="168" height="62" rx="10" fill="#16365c"/>
+<rect x="50" y="68" width="30" height="12" rx="3" fill="#12a594"/>
+<circle cx="188" cy="74" r="5" fill="#ffd166"/>
+<rect x="64" y="100" width="112" height="46" rx="3" fill="#fff" stroke="#9fb3c9"/>
+<rect x="76" y="112" width="70" height="4" rx="2" fill="#c3d1e1"/>
+<rect x="76" y="122" width="86" height="4" rx="2" fill="#c3d1e1"/>
+</symbol>
+<symbol id="cctv" viewBox="0 0 240 160">
+<rect x="20" y="20" width="16" height="120" rx="4" fill="#9fb3c9"/>
+<rect x="36" y="38" width="38" height="10" fill="#6f87a3"/>
+<g transform="rotate(14 120 70)">
+<rect x="70" y="42" width="120" height="48" rx="14" fill="#fff" stroke="#9fb3c9" stroke-width="2"/>
+<rect x="168" y="48" width="26" height="36" rx="8" fill="#0d2540"/>
+<circle cx="181" cy="66" r="9" fill="url(#scr)"/>
+<circle cx="181" cy="66" r="3" fill="#fff"/>
+<rect x="84" y="36" width="70" height="8" rx="3" fill="#16365c"/>
+<circle cx="90" cy="66" r="4" fill="#e5484d"/>
+</g>
+</symbol>
+<symbol id="server" viewBox="0 0 240 160">
+<g fill="#16365c"><rect x="56" y="14" width="128" height="40" rx="6"/><rect x="56" y="60" width="128" height="40" rx="6"/><rect x="56" y="106" width="128" height="40" rx="6"/></g>
+<g fill="#12a594"><circle cx="76" cy="34" r="4"/><circle cx="76" cy="80" r="4"/><circle cx="76" cy="126" r="4"/></g>
+<g fill="#5d7ba0"><rect x="94" y="30" width="70" height="8" rx="2"/><rect x="94" y="76" width="70" height="8" rx="2"/><rect x="94" y="122" width="70" height="8" rx="2"/></g>
+<g fill="#ffd166"><circle cx="170" cy="34" r="3"/><circle cx="170" cy="80" r="3"/></g>
+</symbol>
+<symbol id="router" viewBox="0 0 240 160">
+<rect x="44" y="84" width="152" height="40" rx="10" fill="#16365c"/>
+<g fill="#12a594"><circle cx="70" cy="104" r="4"/><circle cx="88" cy="104" r="4"/><circle cx="106" cy="104" r="4"/></g>
+<g fill="#9fb3c9"><rect x="138" y="98" width="10" height="12" rx="2"/><rect x="154" y="98" width="10" height="12" rx="2"/><rect x="170" y="98" width="10" height="12" rx="2"/></g>
+<g stroke="#16365c" stroke-width="6" stroke-linecap="round"><path d="M70 84V36"/><path d="M170 84V36"/></g>
+<g fill="none" stroke="#1f6feb" stroke-width="4" stroke-linecap="round"><path d="M100 44a28 28 0 0 1 40 0"/><path d="M90 30a44 44 0 0 1 60 0"/></g>
+<circle cx="120" cy="52" r="4" fill="#1f6feb"/>
+</symbol>
+</defs>
+</svg>
 
-  <section>
-    <h2>Hamare Baare Mein</h2>
-    <p>[Company ka Naam] ek IT services company hai, jo businesses ko bharosemand IT support aur ERP solutions deti hai. Hum computers, networks, servers aur software ki Annual Maintenance Contract (AMC) lete hain, taaki aapka kaam kabhi na ruke. Saath hi hum ERP system lagane, chalane aur uski training dene mein bhi madad karte hain.</p>
-  </section>
+<nav>
+<div class="wrap">
+<a class="brand" href="#top">[Company ka Naam]</a>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#hardware">Hardware</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
 
-  <section>
-    <h2>Hamari Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>IT AMC</h3>
-        <ul>
-          <li>Computer aur laptop maintenance</li>
-          <li>Network aur server support</li>
-          <li>Printer aur CCTV support</li>
-          <li>Time par service aur quick response</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>ERP Solutions</h3>
-        <ul>
-          <li>ERP setup aur implementation</li>
-          <li>Daily ERP run karwana aur support</li>
-          <li>Data migration aur customization</li>
-          <li>Staff training</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Other IT Services</h3>
-        <ul>
-          <li>Software installation</li>
-          <li>Data backup aur recovery</li>
-          <li>Antivirus aur security</li>
-          <li>IT consulting</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+<header class="hero" id="top">
+<div class="wrap">
+<div>
+<h1>Reliable IT support and ERP, so your business never stops.</h1>
+<p>We maintain your computers, networks and servers under Annual Maintenance Contracts, and we set up and run your ERP system.</p>
+<a class="btn p" href="#contact">Request a quote</a>
+<a class="btn s" href="#services">Our services</a>
+</div>
+<svg viewBox="0 0 480 320" role="img" aria-label="Illustration of a desktop, laptop, printer and security camera">
+<rect x="10" y="260" width="460" height="10" rx="5" fill="#0a1d33"/>
+<use href="#desktop" x="0" y="40" width="300" height="200"/>
+<use href="#laptop" x="230" y="90" width="250" height="167"/>
+<use href="#cctv" x="330" y="0" width="150" height="100"/>
+<use href="#printer" x="20" y="190" width="120" height="80"/>
+</svg>
+</div>
+</header>
 
-  <section>
-    <h2>Hamara Kaam</h2>
-    <div class="gallery">
-      <img src="it1.jpg" alt="Computer Repair" onerror="this.style.display='none'">
-      <img src="it2.jpg" alt="Server Room" onerror="this.style.display='none'">
-      <img src="it3.jpg" alt="Networking" onerror="this.style.display='none'">
-      <img src="it4.jpg" alt="ERP Software" onerror="this.style.display='none'">
-      <img src="it5.jpg" alt="IT Support" onerror="this.style.display='none'">
-      <img src="it6.jpg" alt="CCTV" onerror="this.style.display='none'">
-    </div>
-  </section>
+<div class="stats">
+<div class="wrap">
+<div><b>AMC</b><span>Annual maintenance contracts</span></div>
+<div><b>ERP</b><span>Setup, run and support</span></div>
+<div><b>24/7</b><span>Quick response to issues</span></div>
+<div><b>1 Team</b><span>For all your IT needs</span></div>
+</div>
+</div>
 
-  <section>
-    <h2>Hum Kyun?</h2>
-    <p>Experienced team, tez service, sahi daam, aur ek hi jagah par IT aur ERP dono ka support. Aapka business smooth chale, yahi hamara maksad hai.</p>
-  </section>
+<section id="about">
+<div class="wrap about">
+<div>
+<h2>About Us</h2>
+<p><b>[Company ka Naam]</b> is an IT services company that helps businesses keep their technology running smoothly. We take care of the everyday work: desktops, laptops, printers, CCTV, networks and servers, so your team can focus on the business.</p>
+<p>We provide Annual Maintenance Contracts (AMC) with scheduled visits and fast support when something breaks. We also implement ERP systems, migrate your data, train your staff, and support daily ERP operations.</p>
+<p>Our approach is simple: clear communication, prompt service, and fair pricing.</p>
+</div>
+<div class="facts">
+<div><b>IT AMC</b><span>Hardware, software and network maintenance</span></div>
+<div><b>ERP Solutions</b><span>Implementation, daily support and training</span></div>
+<div><b>Security Systems</b><span>CCTV installation and support</span></div>
+</div>
+</div>
+</section>
 
-  <section>
-    <h2>Contact Karein</h2>
-    <p><strong>Contact Person:</strong> Mr. Surender Dheteral</p>
-    <p><strong>Email:</strong> <a href="mailto:sinderd94@gmail.com">sinderd94@gmail.com</a></p>
-    <p><strong>Phone:</strong> [Phone number]</p>
-    <p><strong>Address:</strong> [Pata]</p>
-    <a class="btn" href="tel:+91[Phone number]">Abhi Call Karein</a>
-    <a class="btn" href="mailto:sinderd94@gmail.com">Email Bhejein</a>
-  </section>
+<section class="alt" id="services">
+<div class="wrap">
+<h2>Our Services</h2>
+<p class="lead">From a single office to multiple branches, we cover the full range of IT support.</p>
+<div class="services">
+<div class="svc"><h3>IT AMC</h3><ul><li>Desktop and laptop maintenance</li><li>Network and server support</li><li>Printer and CCTV support</li><li>Preventive checks and quick response</li></ul></div>
+<div class="svc"><h3>ERP Solutions</h3><ul><li>ERP setup and implementation</li><li>Daily ERP operation and support</li><li>Data migration and customization</li><li>Staff training</li></ul></div>
+<div class="svc"><h3>Other IT Services</h3><ul><li>Software installation</li><li>Data backup and recovery</li><li>Antivirus and security</li><li>IT consulting</li></ul></div>
+</div>
+</div>
+</section>
 
-  <footer>
-    <p>&copy; 2026 [Company ka Naam]. All rights reserved.</p>
-  </footer>
+<section id="hardware">
+<div class="wrap">
+<h2>Hardware We Support</h2>
+<p class="lead">Supply, installation, repair and maintenance for all common office IT equipment.</p>
+<div class="hw">
+<figure><div class="art"><svg><use href="#desktop"/></svg></div><figcaption><b>Desktop Computers</b><span>Assembly, upgrades and repair</span></figcaption></figure>
+<figure><div class="art"><svg><use href="#laptop"/></svg></div><figcaption><b>Laptops</b><span>Service, screen and battery replacement</span></figcaption></figure>
+<figure><div class="art"><svg><use href="#printer"/></svg></div><figcaption><b>Printers</b><span>Installation, toner and repair</span></figcaption></figure>
+<figure><div class="art"><svg><use href="#cctv"/></svg></div><figcaption><b>CCTV Cameras</b><span>Installation and monitoring support</span></figcaption></figure>
+<figure><div class="art"><svg><use href="#server"/></svg></div><figcaption><b>Servers</b><span>Setup, backup and maintenance</span></figcaption></figure>
+<figure><div class="art"><svg><use href="#router"/></svg></div><figcaption><b>Networking</b><span>Routers, switches and Wi-Fi</span></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
+<h2>Why Choose Us</h2>
+<p class="lead">What you can expect when you work with us.</p>
+<div class="why">
+<div><b>Experienced team</b><span>Engineers who understand both hardware and ERP.</span></div>
+<div><b>Fast response</b><span>Issues are logged and handled promptly.</span></div>
+<div><b>Transparent pricing</b><span>Clear AMC plans with no hidden charges.</span></div>
+<div><b>One point of contact</b><span>A single team for IT and ERP support.</span></div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap grid">
+<div>
+<h2>Get in Touch</h2>
+<p>Tell us about your office and we will suggest the right AMC or ERP support plan.</p>
+<a class="btn p" href="tel:+91[Phone number]">Call now</a>
+<a class="btn s" href="mailto:sinderd94@gmail.com">Send an email</a>
+</div>
+<div>
+<p><b>Contact person:</b> Mr. Surender Dheteral</p>
+<p><b>Email:</b> <a href="mailto:sinderd94@gmail.com">sinderd94@gmail.com</a></p>
+<p><b>Phone:</b> [Phone number]</p>
+<p><b>Address:</b> [Pata]</p>
+</div>
+</div>
+</section>
+
+<footer>&copy; 2026 [Company ka Naam]. All rights reserved.</footer>
 
 </body>
 </html>
